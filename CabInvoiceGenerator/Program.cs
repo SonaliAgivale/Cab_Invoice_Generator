@@ -4,13 +4,14 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace CabInvoiceGenerator
+namespace CabInvoiceGenerators
 {
-    internal class Program
+    public class Program
     {
         static void Main(string[] args)
         {
             Console.WriteLine("Welcome to the CabInvoiceGenerator problems");
+            Console.ReadLine();
         }
     }
 }
