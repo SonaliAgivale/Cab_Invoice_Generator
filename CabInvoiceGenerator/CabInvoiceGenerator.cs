@@ -1,4 +1,5 @@
-﻿using System;
+﻿using CabInvoiceGenerator;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -30,16 +31,20 @@ namespace CabInvoiceGenerators
                 time = time
             });
         }
-
-        public double CalculateAggregate()
+        public InvoiceSummary CalculateAggregate()
         {
             double fair = 0;
-            IEnumerable<Ride> rides = null;
             foreach (Ride ride in rides)
             {
                 fair += CalculateFair(ride.distance, ride.time);
             }
-            return fair;
+            var summary = new InvoiceSummary()
+            {
+                TotalNoOfRides = rides.Count,
+                AvgFair = fair / rides.Count,
+                TotalFair = fair
+            };
+            return summary;
         }
     }
 }

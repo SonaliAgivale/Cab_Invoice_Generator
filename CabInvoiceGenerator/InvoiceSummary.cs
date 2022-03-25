@@ -4,12 +4,12 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace CabInvoiceGenerators
+namespace CabInvoiceGenerator
 {
-    public class Ride
+    public class InvoiceSummary
     {
         public int TotalNoOfRides { get; set; }
-        public double distance { get; set; }
-        public int time { get; set; }
+        public double AvgFair { get; set; }
+        public double TotalFair { get; set; }
     }
 }
